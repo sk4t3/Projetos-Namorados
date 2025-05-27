@@ -12,10 +12,7 @@ toggleMusic.addEventListener('click', () => {
     }
 });
 
-// Mensagem no console
-console.log("🚀 Site criado pelo aluno do 3º DS com muito carinho!");
-
-// 🎯 Enviar orçamento direto no Direct do Instagram
+// 🚀 Enviar orçamento via Instagram (abre perfil)
 const form = document.getElementById('form');
 
 form.addEventListener('submit', function(event) {
@@ -25,12 +22,10 @@ form.addEventListener('submit', function(event) {
     const projeto = document.getElementById('projeto').value;
     const mensagem = document.getElementById('mensagem').value;
 
-    const texto = encodeURIComponent(`Olá! Me chamo ${nome}. Estou interessado em um site ${projeto}. ${mensagem}`);
-    
-    // Link para o direct do Instagram
-    const link = `https://instagram.com/direct/t/@3ds_santao`;
+    const texto = `Olá! Me chamo ${nome}. Quero um site do tipo: ${projeto}. ${mensagem}`;
 
-    alert("Sua mensagem será enviada para nosso Instagram! Clique em OK.");
-    window.open(link, '_blank');
+    alert('Perfeito! Clique em "Enviar mensagem" no Instagram e envie seu orçamento!');
+
+    // Abre seu perfil no Instagram
+    window.open('https://instagram.com/seu_usuario', '_blank');
 });
-
