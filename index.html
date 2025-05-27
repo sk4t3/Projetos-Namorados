@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Projetos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🎶 Trilha sonora -->
+    <audio id="music" autoplay loop>
+        <source src="sua-musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+    <button id="toggleMusic">🔊</button>
+
+    <div class="container">
+
+        <!-- 🔥 Header -->
+        <header>
+            <h1>✨ Nossos Projetos ✨</h1>
+            <p>Transformando ideias em experiências digitais inesquecíveis.</p>
+        </header>
+
+        <!-- 🧭 Passo a Passo -->
+        <section class="passo-a-passo">
+            <h2>🧠 Como Funciona</h2>
+            <div class="steps">
+                <div class="step">1️⃣ Escolha seu modelo</div>
+                <div class="step">2️⃣ Personalizamos juntos</div>
+                <div class="step">3️⃣ Entrego seu site prontinho</div>
+            </div>
+        </section>
+
+        <!-- 🖼️ Galeria de Projetos -->
+        <section class="galeria">
+            <h2>🖼️ Nossos Projetos</h2>
+            <div class="grid-galeria">
+                <img src="projeto1.jpg" alt="Projeto 1">
+                <img src="projeto2.jpg" alt="Projeto 2">
+                <img src="projeto3.jpg" alt="Projeto 3">
+            </div>
+        </section>
+
+        <!-- 📋 Formulário de Contato -->
+        <section class="formulario">
+            <h2>💌 Faça seu orçamento</h2>
+            <form id="form">
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <input type="text" id="projeto" placeholder="Qual tipo de site você quer?" required>
+                <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                <button type="submit">Enviar Orçamento</button>
+            </form>
+
+        </section>
+
+        <!-- 🔗 Instagram -->
+        <footer>
+            <p>Nos acompanhe no Instagram:</p>
+            <a href="https://instagram.com/seu_usuario" target="_blank">@seu_usuario</a>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
