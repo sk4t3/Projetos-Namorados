@@ -1,31 +1,41 @@
-// 🎶 Controle da música
-const music = document.getElementById('music');
-const toggleMusic = document.getElementById('toggleMusic');
 
-toggleMusic.addEventListener('click', () => {
-    if (music.paused) {
-        music.play();
-        toggleMusic.textContent = '🔊';
+
+function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(r => {
+        const windowHeight = window.innerHeight;
+        const elementTop = r.getBoundingClientRect().top;
+        const visible = 150;
+        if (elementTop < windowHeight - visible) {
+            r.classList.add('active');
+        } else {
+            r.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', reveal);
+reveal();
+
+// 🌗 Modo Escuro / Claro com Animação
+const toggleDark = document.getElementById('toggleDark');
+
+toggleDark.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Troca o emoji do botão
+    if (document.body.classList.contains('dark-mode')) {
+        toggleDark.textContent = '☀️';
     } else {
-        music.pause();
-        toggleMusic.textContent = '🔇';
+        toggleDark.textContent = '🌓';
     }
+
+    // Animação no clique
+    toggleDark.classList.add('clicked');
+    setTimeout(() => {
+        toggleDark.classList.remove('clicked');
+    }, 600);
 });
 
-// 🚀 Enviar orçamento via Instagram (abre perfil)
-const form = document.getElementById('form');
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const nome = document.getElementById('nome').value;
-    const projeto = document.getElementById('projeto').value;
-    const mensagem = document.getElementById('mensagem').value;
-
-    const texto = `Olá! Me chamo ${nome}. Quero um site do tipo: ${projeto}. ${mensagem}`;
-
-    alert('Perfeito! Clique em "Enviar mensagem" no Instagram e envie seu orçamento!');
-
-    // Abre seu perfil no Instagram
-    window.open('https://instagram.com/seu_usuario', '_blank');
-});
